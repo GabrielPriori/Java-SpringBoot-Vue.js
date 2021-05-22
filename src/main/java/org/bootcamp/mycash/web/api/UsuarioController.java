@@ -20,6 +20,19 @@ public class UsuarioController {
         return service.todos();
     }
 
+    @PostMapping
+    public Usuario criar(@RequestParam(required = true) String email, @RequestParam(required = true) String senha) {
+        return service.save(email, senha);
+    }
 
+    @GetMapping("/{email}")
+    public Usuario apenasUm(@PathVariable("email") String email) {
+        return service.findByEmail(email);
+    }
+
+    @PutMapping("/{email}")
+    public Usuario resetarSenha(@PathVariable("email") String email, @RequestParam(required = true) String senhaNova) {
+        return service.resetarSenha(email, senhaNova);
+    }
 
 }

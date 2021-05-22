@@ -1,5 +1,6 @@
 package org.bootcamp.mycash.web.dto.error;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ApiError {
 
     private HttpStatus status;
