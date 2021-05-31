@@ -35,4 +35,6 @@ public class UsuarioController {
         return service.resetarSenha(email, senhaNova);
     }
 
+    //branch teste
+
 }
